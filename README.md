@@ -83,14 +83,26 @@ Base is where I'm doing my main transformations. I've created a table which shou
 Here is where I may prepare more specific analytics which could be imported into tableau, or maybe Looker too.
 
 
-<h1>Things to note</h1>
+<h1>My findings & thoughts</h1>
 The date format is a little strange, I would suggest storing this at a much higher level of granularity, say date, or hour. Nanoseconds may be a little bit too much!
 
-<h1> some output queries </h1>
+<h2>Output queries </h2>
 
-Please see ```analytics_time``` the goal of this query is to work out if there's some reason certain referrals are quicker, this could be used to analyse are certain countries better, certain companies or people converting faster/slower?
+Please see ```models/analytics/analytics_time``` the goal of this query is to work out if there's some reason certain referrals are quicker, this could be used to analyse are certain countries better, certain companies or people converting faster/slower?
 
-please see: ```analytics_top_countries``` I am demonstrating the use of: ```count( case when is_outbound = 1 then rc.referral_id end ) as num_of_outbound_referrals``` casing within an aggregation
+please see: ```models/analytics/analytics_top_countries``` I am demonstrating the use of: ```count( case when is_outbound = 1 then rc.referral_id end ) as num_of_outbound_referrals``` casing within an aggregation
 and also ```dense_rank() over (order by total_referrals desc) as ranked``` making use of window functions, you could also use a partition by to aggregate this on another granularity.
 
-please see: ```analytics_upsell``` for a view of our 'upsellers' as detailed in your readme instructions.
+please see: ```models/analytics/analytics_upsell``` for a view of our 'upsellers' as detailed in your readme instructions.
+
+
+<h2>If I had more time/Improvements</h2>
+* If I had more time I would have liked to analyse the time to referral a bit more, we could have baked this into the 'base' layer or could maybe keep a history table here to analyse how these referrals change over time.
+* Also, I would not usually do my analysis in SQL, I have done a bit to showcase my use of SQL, but I would be much more comfortable putting something into Looker/Tableau etc and really playing with the data there. Spotting trends over time, and gaps in data is much easier in this setting.
+I am hoping that I've demonstrated these skills in SQL though.
+
+* Finally I have not included .YML files with the analytics layer, mostly due to time constraints, in a professional project every SQL file would be fully documented in a yml file.
+
+
+
+
