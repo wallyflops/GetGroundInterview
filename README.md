@@ -104,6 +104,8 @@ please see: ```models/analytics/analytics_upsell``` for a view of our 'upsellers
 
 * Finally I have not included .YML files with the analytics layer, mostly due to time constraints, in a professional project every SQL file would be fully documented in a yml file.
 
+<h2>dbt deps</h2>
+I've added some dependancies, mostly to show I can use Jinja and understand this process. I've simply used the dbt util for group by in one of the models!
 
 
 
