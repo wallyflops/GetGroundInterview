@@ -97,10 +97,11 @@ please see: ```models/analytics/analytics_upsell``` for a view of our 'upsellers
 
 
 <h2>If I had more time/Improvements</h2>
-If I had more time I would have liked to analyse the time to referral a bit more, we could have baked this into the 'base' layer or could maybe keep a history table here to analyse how these referrals change over time.
-Also, I would not usually do my analysis in SQL, I have done a bit to showcase my use of SQL, but I would be much more comfortable putting something into Looker/Tableau etc and really playing with the data there. Spotting trends over time, and gaps in data is much easier in this setting.
+* If I had more time I would have liked to analyse the time to referral a bit more, we could have baked this into the 'base' layer or could maybe keep a history table here to analyse how these referrals change over time.
+* Also, I would not usually do my analysis in SQL, I have done a bit to showcase my use of SQL, but I would be much more comfortable putting something into Looker/Tableau etc and really playing with the data there. Spotting trends over time, and gaps in data is much easier in this setting.
 I am hoping that I've demonstrated these skills in SQL though.
 
+* Finally I have not included .YML files with the analytics layer, mostly due to time constraints, in a professional project every SQL file would be fully documented in a yml file.
 
 
 
