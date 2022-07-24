@@ -20,7 +20,7 @@ models:
 ```
 I am using table's here mainly for simplicity, in a real life example I may use views, or even ephemeral's.
 
-**schema.yml**
+<h1>schema.yml</h1>
 In here I am adding our sources which I have manually imported into BQ. I did this via GCP Storage.
 
 ```
@@ -42,7 +42,7 @@ sources:
 
 
 
-**Tests**
+<h1>Tests</h1>
 I have included an example of referential integrity in the file: 
 ```landing_referrals.yml```
 
@@ -69,6 +69,28 @@ I have done some more simple tests in the ```partners.yml``` file:
               values: ['Lender', 'Insurer', 'Other', 'Agent', 'IFA', 'Developer', 'Influencer', 'Management company']
 ```
 
+I would make sure that every field has a description, and every field has relevant tests in a real life example, but this would be very time consuming for this example so I have skipped doing this!
+
+<h1>How I've structured the project</h1>
+I've created a folder structure of "landing", "base" and "analytics".
+**landing**
+landing is where the data enters the project, I've made effort to not do too much transformations at this stage. Renaming fields and preparing the data ready for analysis.
+
+**base**
+Base is where I'm doing my main transformations. I've created a table which should allow analysts to really interrogate this data. You could put this into a BI tool like Looker and really explore this data in this state.
+
+**analytics**
+Here is where I may prepare more specific analytics which could be imported into tableau, or maybe Looker too.
 
 
+<h1>Things to note</h1>
+The date format is a little strange, I would suggest storing this at a much higher level of granularity, say date, or hour. Nanoseconds may be a little bit too much!
 
+<h1> some output queries </h1>
+
+Please see ```analytics_time``` the goal of this query is to work out if there's some reason certain referrals are quicker, this could be used to analyse are certain countries better, certain companies or people converting faster/slower?
+
+please see: ```analytics_top_countries``` I am demonstrating the use of: ```count( case when is_outbound = 1 then rc.referral_id end ) as num_of_outbound_referrals``` casing within an aggregation
+and also ```dense_rank() over (order by total_referrals desc) as ranked``` making use of window functions, you could also use a partition by to aggregate this on another granularity.
+
+please see: ```analytics_upsell``` for a view of our 'upsellers' as detailed in your readme instructions.
