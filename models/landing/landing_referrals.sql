@@ -9,6 +9,6 @@ with referrals as (
   , consultant_id
   , status
   , is_outbound
-  from {{ source('GetGroundInterview','referrals') }}
+  from {{ source('getground','referrals') }}
 )
 select * from referrals

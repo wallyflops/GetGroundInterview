@@ -5,6 +5,6 @@ select
 , updated_at
 , partner_type
 , lead_sales_contact
-from {{ source('GetGroundInterview', 'partners')}}
+from {{ source('getground', 'partners')}}
 )
 select * from partners
