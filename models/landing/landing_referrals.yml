@@ -3,3 +3,12 @@ version: 2
 models:
     - name: landing_referrals
       description: "an example landing model"
+
+      columns:
+        - name: partner_id
+          description: this is the ID of the partner
+          tests:
+            - relationships:
+                to: ref('landing_partners')
+                field: partner_id
+

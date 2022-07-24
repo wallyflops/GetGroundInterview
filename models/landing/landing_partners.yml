@@ -3,3 +3,16 @@ version: 2
 models:
     - name: landing_partners
       description: "an example landing model"
+
+      columns: 
+      - name: partner_id
+        description: "This is the ID of the partner"
+        tests:
+          - not_null
+          - unique
+      - name: partner_type
+        description: 'This is the type of partner we have'
+        tests:
+          - accepted_values:
+              values: ['Lender', 'Insurer', 'Other', 'Agent', 'IFA', 'Developer', 'Influencer', 'Management company']
+

@@ -3,3 +3,5 @@ version: 2
 models:
     - name: landing_sales_people
       description: "an example landing model"
+
+      
