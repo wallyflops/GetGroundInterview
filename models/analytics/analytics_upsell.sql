@@ -6,7 +6,6 @@ from
     {{ref('base_referrals_core')}} rc
 where
     is_outbound = 1
-group by
-    1, 2
+{{ dbt_utils.group_by(n=2) }}
 order by
     1, 2
