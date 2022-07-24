@@ -1,5 +1,7 @@
 Hi!
 
+<h1> How to use</h1>
+
 Feel free to run the project with:
 ```dbt run -s landing base analytics```
 
