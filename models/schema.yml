@@ -1,6 +1,6 @@
 version: 2
 sources:
-    - name: GetGroundInterview
+    - name: getground
       description: 'This is a description'
       # database: landing
 
