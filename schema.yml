@@ -1,0 +1,14 @@
+version: 2
+sources:
+    - name: GetGroundInterview
+      description: 'This is a description'
+      # database: landing
+
+      schema: getgroundsample
+      tables:
+        - name: 'sales_people'
+          identifier: 'sales_people'
+        - name: 'partners'
+          identifier: 'partners'
+        - name: 'referrals'
+          identifier: 'referrals'
