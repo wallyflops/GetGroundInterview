@@ -1,0 +1,5 @@
+version: 2
+
+models:
+    - name: base_referrals_core
+      description: "an example core  model"
